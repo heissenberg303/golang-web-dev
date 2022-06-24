@@ -31,6 +31,12 @@ var fm = template.FuncMap{
 }
 
 func init() {
+	// Must is a helper function that handle error
+	// tpl is a container which contains function and render html template
+	// Funcs has receiver of *Template
+	// *Template <- Must(err, *Template) <- (t *Template) ParsFiles("file.html") <- (t *Template) Funcs(fm FuncMap) <- *Template <- New("")
+	// execute -> inside out
+	// Go suffers no fool
 	tpl = template.Must(template.New("").Funcs(fm).ParseFiles("tpl.gohtml"))
 }
 

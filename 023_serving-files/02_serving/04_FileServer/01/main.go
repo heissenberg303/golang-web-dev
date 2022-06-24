@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	// Serve File in this directory
 	http.Handle("/", http.FileServer(http.Dir(".")))
 	http.HandleFunc("/dog/", dog)
 	http.ListenAndServe(":8080", nil)

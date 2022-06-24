@@ -21,6 +21,7 @@ func main() {
 	var d hotdog
 	var c hotcat
 
+	// mux is a *ServeMux
 	mux := http.NewServeMux()
 	mux.Handle("/dog/", d)
 	mux.Handle("/cat", c)

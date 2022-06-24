@@ -15,6 +15,7 @@ func main() {
 	defer li.Close()
 
 	for {
+		// Connection is use for Read and Write ([]byte, err)
 		conn, err := li.Accept()
 		if err != nil {
 			log.Println(err)

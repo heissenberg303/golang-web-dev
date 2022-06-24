@@ -15,6 +15,8 @@ func c(res http.ResponseWriter, req *http.Request) {
 
 func main() {
 
+	// d -> has underline type of HandlerFunc which implement Handler interface
+	// convert d to HandlerFunc
 	http.Handle("/dog", http.HandlerFunc(d))
 	http.Handle("/cat", http.HandlerFunc(c))
 

@@ -21,6 +21,7 @@ func main() {
 	var d hotdog
 	var c hotcat
 
+	// http.Handler -> return *defaultServeMux.Handle(pattern String,  handler)
 	http.Handle("/dog", d)
 	http.Handle("/cat", c)
 

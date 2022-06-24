@@ -7,6 +7,8 @@ import (
 )
 
 func main() {
+
+	// thinking it's a container holding a template
 	tpl, err := template.ParseFiles("one.gmao")
 	if err != nil {
 		log.Fatalln(err)

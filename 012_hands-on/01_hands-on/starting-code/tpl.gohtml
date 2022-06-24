@@ -8,7 +8,21 @@
 
 {{range .}}
 
-<!-- PUT YOUR CODE HERE TO SHOW THE DATA-->
+    <ul> Fall Semester</ul>
+    <li>Academic Year: {{.AcaYear}}</li>
+    <li>Semester: {{.Fall.Term}}</li>
+        {{range .Fall.Courses}}
+        <li>Courses Details: {{.Number}} - {{.Name}} - {{.Units}}</li>
+        {{end}}
+
+
+    <ul> Spring Semester</ul>
+    <li>Academic Year: {{.AcaYear}}</li>
+    <li>Semester: {{.Spring.Term}}</li>
+    {{range .Spring.Courses}}
+        <li>Courses Details: {{.Number}} - {{.Name}} - {{.Units}}</li>
+    {{end}}
+
 
 {{end}}
 

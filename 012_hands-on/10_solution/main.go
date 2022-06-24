@@ -37,6 +37,7 @@ func foo(res http.ResponseWriter, req *http.Request) {
 	}
 }
 
+// prs is a function that return slice of type Record
 func prs(filePath string) []Record {
 	src, err := os.Open(filePath)
 	if err != nil {
@@ -50,6 +51,7 @@ func prs(filePath string) []Record {
 		log.Fatalln(err)
 	}
 
+	// make records of type Record with length of file rows
 	records := make([]Record, 0, len(rows))
 
 	for i, row := range rows {
@@ -58,7 +60,7 @@ func prs(filePath string) []Record {
 		}
 		date, _ := time.Parse("2006-01-02", row[0])
 		open, _ := strconv.ParseFloat(row[1], 64)
-
+		// append data from row to records
 		records = append(records, Record{
 			Date: date,
 			Open: open,
